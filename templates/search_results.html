@@ -1,0 +1,19 @@
+<!-- search_results.html -->
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h3>Search Results for "{{ query }}"</h3>
+
+    {% if results %}
+        <ul>
+            {% for post in results %}
+                <li>{{ post.title }}</li>
+                <p>{{ post.content }}</p>
+
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>'{{query}}' Bunday blog topilmadi.</p>
+    {% endif %}
+{% endblock %}
